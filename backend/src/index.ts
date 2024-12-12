@@ -6,19 +6,19 @@ import OpenAI from "openai";
 import { enhanceUserPrompt, generateSystemPrompt } from "./training/prompt.js";
 dotenv.config();
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const PORT = process.env.PORT || 3000;
-
 const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "",
-  methods: "*"
+  origin: "https://ai-chatbot-rho-eight.vercel.app",
+    methods: ["*"],
 }));
 app.use(morgan("tiny"));
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const PORT = process.env.PORT || 3000;
 
 app.post("/v1/api/chat", async (req: Request, res: Response) => {
   try {
