@@ -5,8 +5,9 @@
   "license": "MIT",
   "author": "Rahul Aggarwal",
   "scripts": {
-    "build": "tsc && node ./dist/index.js",
-    "dev": "tsc && nodemon ./dist/index.js"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon --exec ts-node src/index.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -19,7 +20,6 @@
     "@types/express": "^5.0.0",
     "@types/morgan": "^1.9.9",
     "nodemon": "^3.1.7",
-    "typescript": "^5.7.2",
     "morgan": "^1.10.0"
   }
 }
