@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-const URL = "https://ai-chatbot-backend-inky.vercel.app";
+const URL = "https://ai-chatbot-0n96.onrender.com";
 
 type Messages = {
   isBot: boolean;

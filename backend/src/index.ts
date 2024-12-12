@@ -12,8 +12,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://ai-chatbot-rho-eight.vercel.app",
-      "https://ai-chatbot-backend-inky.vercel.app",
+      "https://ai-chatbot-rho-eight.vercel.app"
     ],
     methods: ["*"],
   })
