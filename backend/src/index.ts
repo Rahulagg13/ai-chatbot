@@ -14,7 +14,10 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "",
+  methods: "*"
+}));
 app.use(morgan("tiny"));
 
 app.post("/v1/api/chat", async (req: Request, res: Response) => {
