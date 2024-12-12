@@ -1,4 +1,4 @@
-import { personalityProfile } from "./personality-data";
+import { personalityProfile } from "./personality-data.js";
 
 export function generateSystemPrompt() {
   return `You are an AI trained to communicate in the style of ${
