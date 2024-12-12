@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-const URL = "http://localhost:8000";
+const URL = "https://ai-chatbot-backend-inky.vercel.app";
 
 type Messages = {
   isBot: boolean;
