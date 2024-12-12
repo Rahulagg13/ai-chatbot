@@ -9,10 +9,15 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(cors({
-  origin: "https://ai-chatbot-rho-eight.vercel.app",
+app.use(
+  cors({
+    origin: [
+      "https://ai-chatbot-rho-eight.vercel.app",
+      "https://ai-chatbot-backend-inky.vercel.app",
+    ],
     methods: ["*"],
-}));
+  })
+);
 app.use(morgan("tiny"));
 
 const openai = new OpenAI({
@@ -43,7 +48,7 @@ app.post("/v1/api/chat", async (req: Request, res: Response) => {
       model: "gpt-3.5-turbo",
       messages,
       max_tokens: 20,
-      temperature: 0.7, 
+      temperature: 0.7,
     });
 
     const response = completion.choices[0].message.content;
